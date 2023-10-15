@@ -1,0 +1,17 @@
+import React from "react";
+
+export default function Results(props) {
+  console.log(props.definition);
+  if (props.definition) {
+    return (
+      <div className="Results">
+        <h1>{props.results.word}</h1>
+        {props.definition.meanings.map(function (meaning, index) {
+          return meaning.definition;
+        })}
+      </div>
+    );
+  } else {
+    return null;
+  }
+}
