@@ -16,7 +16,7 @@ function search(event) {
   event.preventDefault();
 
   let apiKey = "8f63022fa4b60b22c3t7fe8f63b45ob9";
-  let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}}&key=${apiKey}`;
   axios.get(apiUrl).then(handleResponse);
 }
 
