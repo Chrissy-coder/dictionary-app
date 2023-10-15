@@ -9,9 +9,9 @@ export default function Results(props) {
         <h1>{props.results.word}</h1>
         {props.definition.meanings.map(function (meaning, index) {
           return (
-<div key={index}>
-<Meaning meaning={meaning} />
-  </div>
+            <div key={index}>
+              <Meaning meaning={meaning} />
+            </div>
           );
         })}
       </div>
