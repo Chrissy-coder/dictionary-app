@@ -5,10 +5,10 @@ import "./Dictionary.css";
 
 export default function Dictionary() {
   const [keyword, setKeyword] = useState("");
+  const [results, setResults] = useState(null);
 
 function handleResponse (response) {
-  console.log(response.data);
- 
+ setResults(response.data);
 }
 
   
@@ -16,8 +16,8 @@ function handleResponse (response) {
     event.preventDefault();
     
 
-    
-    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=8f63022fa4b60b22c3t7fe8f63b45ob9`;
+    let apiKey = "8f63022fa4b60b22c3t7fe8f63b45ob9"
+    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
     console.log(apiUrl);
     axios.get(apiUrl).then(handleResponse);
   }
@@ -38,7 +38,7 @@ function handleResponse (response) {
               onChange={handleKeywordChange}
             />
           </form>
-          <Results />
+          <Results results={results}/>
       </div>
     );
     }
