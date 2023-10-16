@@ -5,18 +5,8 @@ console.log(props.meaning);
 return (
    <div className="Meaning"> 
 <h3>{props.meaning.partOfSpeech}</h3>
-{props.meaning.definitions.map(function (definition, index)
-{
-  return (
-<div key={index}>
-<p>
-    {props.meaning.definition}
-<br />
-<em>{props.meaning.example}</em>
-</p>
-    </div>
-  );  
-})}
-</div>
-);
-}
+        <p>{props.meaning.definition}</p>
+        <em>{props.meaning.example}</em>
+      </div>
+    );
+} 
