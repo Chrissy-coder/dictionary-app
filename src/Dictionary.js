@@ -5,11 +5,21 @@ import "./Dictionary.css";
 
 export default function Dictionary(props) {
   const [keyword, setKeyword] = useState(props.defaultKeyword);
-  const [results, setResults] = useState(null);
   const [loaded, setLoaded] = useState(false);
+  const [definition, setDefinition] = useState([]);
 
   function handleResponse(response) {
-    setResults(response.data);
+    setDefinition(response.data);
+    let apiKey = "8f63022fa4b60b22c3t7fe8f63b45ob9";
+    let apiUrl = `https://api.shecodes.io/images/v1/search?query=${response.data.word}&key=${apiKey}`;
+    axios
+      .get(apiUrl, { headers: { Authorization: `Bearer ${apiKey}` } })
+      .then(handleImages);
+  }
+
+  function load() {
+    setLoaded(true);
+    search();
   }
 
   function search() {
@@ -27,11 +37,6 @@ function handleSubmit(event) {
     setKeyword(event.target.value);
   }
 
-  function load() {
-    setLoaded(true);
-    search();
-  }
-
   if (loaded) {
     return (
       <div className="Dictionary">
@@ -40,6 +45,7 @@ function handleSubmit(event) {
             <input
               type="search"
               placeholder="Search for a word"
+              defaultValue={props.defaultKeyword}
               autoFocus={true}
               className="form-control search-input"
               onChange={handleKeywordChange}
@@ -47,7 +53,7 @@ function handleSubmit(event) {
           </form>
           <div className="hint">Suggested words: sunset, wine, yoga</div>
         </section>
-        <Results results={results} />
+        <Results definition={definition} />
       </div>
     );
   } else {
