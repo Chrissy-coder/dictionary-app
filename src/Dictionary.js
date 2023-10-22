@@ -36,6 +36,7 @@ export default function Dictionary() {
             onChange={handleKeywordChange}
           />
         </form>
+        <div className="hint">Suggested words: sunset, wine, yoga</div>
       </section>
       <Results results={results} />
     </div>
