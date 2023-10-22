@@ -1,4 +1,7 @@
-.Dictionary{
-    background-color: rgba(190, 187, 186, 0.939);
-    color: rgb(72, 71, 71);
+.Dictionary section{
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(116, 114, 114, 0.1);
+  margin: 20px 0;
 }
