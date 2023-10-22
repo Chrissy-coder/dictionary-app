@@ -8,7 +8,7 @@ export default function App() {
         <h1>Dictionary App</h1>
         <div>
           <main>
-            <Dictionary />
+            <Dictionary defaultKeyword="sunset"/>
           </main>
           <footer>
             Coded by Christine Soropa and open-sourced on {""}
