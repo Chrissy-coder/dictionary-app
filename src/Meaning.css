@@ -2,11 +2,13 @@
   font-size: 24px;
   line-height: 1.5;
   font-weight: bold;
-  text-transform: capitalize;
 }
 
-.Meaning .example {
-  font-size: 14px;
-  opacity: 0.7;
+.Meaning .Example {
+  color: #70757a;
   font-style: italic;
+}
+
+.Meaning .Definition {
+  color: blue;
 }
